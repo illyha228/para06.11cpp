@@ -7,8 +7,9 @@ using std::endl;
 
 int main() 
 {
-	GetConsoleCP(1251);
-	system("chcp 1231");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	system("chcp 1251");
 	cout << "Привіт Гудзиик" << endl;
 	system("pause");
 	return 0;
