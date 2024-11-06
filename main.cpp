@@ -1,15 +1,13 @@
 ﻿#include <iostream>
-#include <windows.h> // Для зміни кольору консолі в Windows
+#include <windows.h> 
 
 using namespace std;
 
-// Функція для зміни кольору фону
 void setColor(int backgroundColor) {
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), backgroundColor);
 }
 
 int main() {
-    // Виведення повідомлень з різними кольорами фону
     setColor(BACKGROUND_RED);
     cout << "Hello, World!" << endl;
 
@@ -25,7 +23,6 @@ int main() {
     setColor(BACKGROUND_INTENSITY | BACKGROUND_GREEN);
     cout << "Hello, World!" << endl;
 
-    // Повертаємо колір консолі в стандартний
     setColor(0);
 
     return 0;
