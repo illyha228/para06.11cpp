@@ -27,7 +27,7 @@ int main() {
             cout << "rezultat: " << num1 / num2 << endl;
         }
         else {
-            cout << "Error: //0!" << endl;
+            cout << "Errorrr: //0!" << endl;
         }
         break;
     default:
