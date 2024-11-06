@@ -1,39 +1,32 @@
 ﻿#include <iostream>
+#include <windows.h> // Для зміни кольору консолі в Windows
+
 using namespace std;
 
+// Функція для зміни кольору фону
+void setColor(int backgroundColor) {
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), backgroundColor);
+}
+
 int main() {
-    double num1, num2;
-    char oper;
+    // Виведення повідомлень з різними кольорами фону
+    setColor(BACKGROUND_RED);
+    cout << "Hello, World!" << endl;
 
-    cout << "1 chislo vvedit: ";
-    cin >> num1;
-    cout << "vvedit diu (+, -, *, /): ";
-    cin >> oper;
-    cout << "2 chislo vvedit: ";
-    cin >> num2;
+    setColor(BACKGROUND_GREEN);
+    cout << "Hello, World!" << endl;
 
-    switch (oper) {
-    case '+':
-        cout << "rezultat: " << num1 + num2 << endl;
-        break;
-    case '-':
-        cout << "rezultat: " << num1 - num2 << endl;
-        break;
-    case '*':
-        cout << "rezultat: " << num1 * num2 << endl;
-        break;
-    case '/':
-        if (num2 != 0) {
-            cout << "rezultat: " << num1 / num2 << endl;
-        }
-        else {
-            cout << "Error: //0!" << endl;
-        }
-        break;
-    default:
-        cout << "Error dia!" << endl;
-        break;
-    }
+    setColor(BACKGROUND_BLUE);
+    cout << "Hello, World!" << endl;
+
+    setColor(BACKGROUND_INTENSITY | BACKGROUND_RED);
+    cout << "Hello, World!" << endl;
+
+    setColor(BACKGROUND_INTENSITY | BACKGROUND_GREEN);
+    cout << "Hello, World!" << endl;
+
+    // Повертаємо колір консолі в стандартний
+    setColor(0);
 
     return 0;
 }
